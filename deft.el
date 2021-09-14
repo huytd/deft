@@ -1475,7 +1475,7 @@ non-nil and title is not from filename, use it as the title."
     (if (and deft-filter-regexp deft-use-filter-string-for-filename)
         ;; If the filter string is non-emtpy and titles are taken from
         ;; filenames is set, construct filename from filter string.
-        (setq slug (deft-whole-filter-regexp))
+        (setq slug (fmt (concat (format-time-string deft-new-file-format) " " deft-whole-filter-regexp)))
       ;; If the filter string is empty, or titles are taken from file
       ;; contents, then use an automatically generated unique filename.
       (setq slug (deft-unused-slug)))
